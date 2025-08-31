@@ -1,48 +1,73 @@
+import { useState, useEffect } from "react";
 import { ArrowRight, Play } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-construction.jpg";
+
+// NOTE: Please add two more hero images to your `src/assets` folder.
+import heroImage1 from "@/assets/hero-construction.jpg";
+import heroImage2 from "@/assets/hero-construction-2.jpg"; // Example: add this file
+import heroImage3 from "@/assets/hero-construction-3.jpg"; // Example: add this file
+
+const backgroundImages = [heroImage1, heroImage2, heroImage3];
 
 const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+    }, 5500); // Time before switching to the next image
+
+    return () => clearTimeout(timer);
+  }, [currentImageIndex]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent" />
-      </div>
+      {/* Animated Background Image Slider */}
+      <AnimatePresence>
+        <motion.div
+          key={currentImageIndex}
+          className="absolute inset-0 z-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${backgroundImages[currentImageIndex]})` }}
+          initial={{ opacity: 0, scale: 1 }}
+          animate={{ opacity: 1, scale: 1.05, transition: { duration: 7, ease: "easeOut" } }}
+          exit={{ opacity: 0, transition: { duration: 1.5, ease: "easeIn" } }}
+        />
+      </AnimatePresence>
+      <div className="absolute inset-0 z-1 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent" />
 
       {/* Hero Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl">
-          <div className="animate-fade-in-up">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight">
+          <motion.div initial="hidden" animate="visible" variants={{ visible: { transition: { staggerChildren: 0.2 } } }}>
+            <motion.h1 
+              className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+            >
               Building Your
               <span className="block text-secondary text-shadow">
                 Dreams Into Reality
               </span>
-            </h1>
+            </motion.h1>
             
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed">
+            <motion.p 
+              className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+            >
               Premier construction and real estate services with over 15 years of excellence. 
               From residential homes to commercial projects, we deliver quality that lasts.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button size="lg" className="btn-gold text-lg px-8 py-4 h-auto">
-                <Link to="/contact" className="flex items-center gap-2">
-                  Get Free Quote
-                  <ArrowRight className="h-5 w-5" />
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 mb-12"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+            >
+              <Button size="lg" className="btn-gold text-lg px-8 py-4 h-auto" asChild>
+                <Link to="/contact" viewTransition>
+                  Get Free Quote <ArrowRight className="h-5 w-5 ml-2" />
                 </Link>
               </Button>
-              
               <Button 
                 size="lg" 
                 variant="outline" 
@@ -51,37 +76,33 @@ const Hero = () => {
                 <Play className="h-5 w-5 mr-2" />
                 Watch Our Story
               </Button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 animate-slide-in-right">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-2">500+</div>
-              <div className="text-white/80 text-sm md:text-base">Projects Completed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-2">15+</div>
-              <div className="text-white/80 text-sm md:text-base">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-2">50+</div>
-              <div className="text-white/80 text-sm md:text-base">Team Members</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-2">100%</div>
-              <div className="text-white/80 text-sm md:text-base">Client Satisfaction</div>
-            </div>
-          </div>
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            initial="hidden"
+            animate="visible"
+            variants={{ visible: { transition: { staggerChildren: 0.2, delayChildren: 0.6 } } }}
+          >
+            {[
+              { value: "500+", label: "Projects Completed" },
+              { value: "15+", label: "Years Experience" },
+              { value: "50+", label: "Team Members" },
+              { value: "100%", label: "Client Satisfaction" },
+            ].map((stat) => (
+              <motion.div key={stat.label} className="text-center" variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
+                <div className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-2">{stat.value}</div>
+                <div className="text-white/80 text-sm md:text-base">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce" />
-        </div>
-      </div>
+      
     </section>
   );
 };

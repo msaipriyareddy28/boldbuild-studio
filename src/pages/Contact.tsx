@@ -48,13 +48,13 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Main Office",
-      details: ["123 Construction Ave", "Downtown City, ST 12345"],
+      details: ["402,4th floor,Flat No.1559&1760A,Gokul Trade Center, KPHB state, 9th Phase, Venkata Ramana Colony", "Hyderabad, Telangana 500085"],
       action: "Get Directions"
     },
     {
       icon: Phone,
       title: "Phone Number",
-      details: ["(555) 123-4567", "24/7 Emergency Line"],
+      details: ["9494054102", "24/7 Emergency Line"],
       action: "Call Now"
     },
     {
@@ -109,7 +109,7 @@ const Contact = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="btn-gold text-lg px-8 py-3">
                 <Phone className="mr-2 h-5 w-5" />
-                Call (555) 123-4567
+                9494054102
               </Button>
               <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-3">
                 <MessageCircle className="mr-2 h-5 w-5" />
@@ -177,7 +177,7 @@ const Contact = () => {
                           value={formData.phone}
                           onChange={handleInputChange}
                           required
-                          placeholder="(555) 123-4567"
+                          placeholder="9494054102"
                           className="mt-1"
                         />
                       </div>
@@ -267,24 +267,13 @@ const Contact = () => {
               })}
 
               {/* Emergency Contact */}
-              <Card className="shadow-elegant border-0 bg-gradient-primary text-white">
-                <CardContent className="p-6 text-center">
-                  <h3 className="font-heading font-bold text-xl mb-2">Emergency Services</h3>
-                  <p className="text-white/90 mb-4">
-                    Need urgent construction or repair services? We're available 24/7 for emergencies.
-                  </p>
-                  <Button className="btn-gold w-full">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Emergency Hotline
-                  </Button>
-                </CardContent>
-              </Card>
+              
             </div>
           </div>
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Map Section - Commented out as per request
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -294,7 +283,7 @@ const Contact = () => {
             </p>
           </div>
           
-          {/* Placeholder for Google Maps */}
+          {/* Placeholder for Google Maps *\/}
           <div className="bg-muted rounded-lg h-96 flex items-center justify-center">
             <div className="text-center">
               <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
@@ -307,6 +296,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* FAQ Section */}
       <section className="py-20">

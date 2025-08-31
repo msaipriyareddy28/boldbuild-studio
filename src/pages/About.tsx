@@ -13,29 +13,26 @@ const About = () => {
 
   const team = [
     {
-      name: "John Martinez",
-      role: "Founder & CEO",
+      name: "KUNCHE SUNEETHA",
+      role: "DIRECTOR",
+      image: "https://placehold.co/150x150/1a1a1a/EAB308?text=KS",
       experience: "20+ Years",
       specialty: "Project Management & Business Development"
     },
     {
-      name: "Sarah Chen",
-      role: "Chief Architect",
+      name: "UNDRU RAJU",
+      role: "DIRECTOR",
+      image: "https://placehold.co/150x150/1a1a1a/EAB308?text=UR",
       experience: "15+ Years", 
       specialty: "Residential & Commercial Design"
     },
     {
-      name: "Michael Rodriguez",
-      role: "Construction Manager",
-      experience: "18+ Years",
-      specialty: "Site Management & Safety"
+      name: "N S RAO",
+      role: "DIRECTOR",
+      image: "https://placehold.co/150x150/1a1a1a/EAB308?text=NAR",
+      experience: "15+ Years", 
+      specialty: "Residential & Commercial Design"
     },
-    {
-      name: "Emily Thompson",
-      role: "Interior Designer",
-      experience: "12+ Years",
-      specialty: "Modern & Sustainable Interiors"
-    }
   ];
 
   const certifications = [
@@ -126,14 +123,16 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {team.map((member, index) => (
-              <Card key={index} className="bg-background shadow-elegant border-0 group hover:shadow-primary/10 transition-all duration-300">
+              <Card key={index} className="bg-background shadow-elegant border-0 group hover:shadow-primary/10 transition-all duration-300 w-full max-w-xs">
                 <CardContent className="p-6 text-center">
-                  <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-white">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
+                  <div className="w-32 h-32 mx-auto mb-6">
+                    <img
+                      src={member.image}
+                      alt={`Portrait of ${member.name}`}
+                      className="w-full h-full rounded-full object-cover border-4 border-secondary group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
                   <h3 className="text-xl font-heading font-bold mb-2">{member.name}</h3>
                   <p className="text-primary font-semibold mb-2">{member.role}</p>

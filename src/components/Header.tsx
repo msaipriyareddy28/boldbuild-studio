@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +13,6 @@ const Header = () => {
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
     { name: "Projects", path: "/projects" },
-    { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -24,11 +24,13 @@ const Header = () => {
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-bold text-xl">J</span>
-            </div>
+            <img 
+              src={logo}
+              alt="J&U Projects Logo" 
+              className="h-12 w-auto"
+            />
             <div>
-              <h1 className="text-xl font-heading font-bold text-primary">JuProjects</h1>
+              <h1 className="text-xl font-heading font-bold text-primary">J&U Projects LLP</h1>
               <p className="text-xs text-muted-foreground -mt-1">Construction Studio</p>
             </div>
           </Link>

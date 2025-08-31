@@ -13,10 +13,7 @@ const Projects = () => {
       id: 1,
       title: "Luxury Modern Villa",
       category: "Residential",
-      location: "Beverly Hills, CA",
-      year: "2024",
-      budget: "$2.5M",
-      image: "/placeholder.svg",
+      image: "https://images.pexels.com/photos/29334668/pexels-photo-29334668.png?cs=srgb&dl=pexels-luizavenanci-29334668.jpg&fm=jpg",
       description: "A stunning 5-bedroom modern villa featuring sustainable materials, smart home technology, and breathtaking city views.",
       features: ["5 Bedrooms", "6 Bathrooms", "Smart Home", "Solar Panels", "Pool"],
       team: "12 specialists"
@@ -28,7 +25,7 @@ const Projects = () => {
       location: "Downtown LA, CA", 
       year: "2023",
       budget: "$8.2M",
-      image: "/placeholder.svg",
+      image: "https://citiesofthefuture.eu/wp-content/uploads/2020/11/modern-architecture-4749683.jpg",
       description: "A 15-story corporate headquarters with LEED Platinum certification, featuring modern office spaces and green building technologies.",
       features: ["15 Floors", "LEED Platinum", "Green Roof", "EV Charging", "Fitness Center"],
       team: "25 specialists"
@@ -40,7 +37,7 @@ const Projects = () => {
       location: "Pasadena, CA",
       year: "2023",
       budget: "$890K",
-      image: "/placeholder.svg",
+      image: "https://assets.architecturaldigest.in/photos/64b02e5ff32a031170b6e236/4:3/w_1440,h_1080,c_limit/Featured%20-%201620%20x%201080%20(1).png",
       description: "Complete restoration of a 1920s craftsman home, preserving historical character while adding modern amenities.",
       features: ["Historic Preservation", "Modern Kitchen", "Updated Systems", "Original Woodwork"],
       team: "8 specialists"
@@ -52,7 +49,7 @@ const Projects = () => {
       location: "Santa Monica, CA",
       year: "2023",
       budget: "$4.1M",
-      image: "/placeholder.svg",
+      image: "https://www.addressofchoice.com/aoc_assets/blog/1564728752_Top_7_luxurious_shopping_Malls_in_India.jpg",
       description: "A modern 50,000 sq ft shopping center with mixed retail and dining spaces, featuring sustainable design elements.",
       features: ["50,000 sq ft", "20 Retail Units", "Parking Structure", "Outdoor Plaza"],
       team: "18 specialists"
@@ -64,7 +61,7 @@ const Projects = () => {
       location: "Century City, CA",
       year: "2022",
       budget: "$1.2M",
-      image: "/placeholder.svg",
+      image: "https://q-xx.bstatic.com/xdata/images/hotel/max500/278153967.jpg?k=7fc97854595d5ac69c72bed4b8fb119bc2212c6c2afb02873a9564d6374916f3&o=",
       description: "Complete penthouse renovation with panoramic city views, luxury finishes, and custom Italian cabinetry.",
       features: ["Panoramic Views", "Italian Cabinetry", "Marble Bathrooms", "Wine Cellar"],
       team: "10 specialists"
@@ -76,7 +73,7 @@ const Projects = () => {
       location: "Malibu, CA",
       year: "2022",
       budget: "$1.8M",
-      image: "/placeholder.svg",
+      image: "https://cdn.shopify.com/s/files/1/0512/4823/4660/files/chitra_MG_2221_480x480.jpg?v=1656841451",
       description: "An eco-friendly family home built with sustainable materials, solar energy, and rainwater harvesting systems.",
       features: ["Net Zero Energy", "Rainwater Harvesting", "Recycled Materials", "Natural Lighting"],
       team: "14 specialists"
@@ -169,26 +166,6 @@ const Projects = () => {
                   <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                     {project.description}
                   </p>
-                  
-                  {/* Project Details */}
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <MapPin className="h-4 w-4 mr-2 text-primary" />
-                      {project.location}
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4 mr-2 text-primary" />
-                      Completed in {project.year}
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <DollarSign className="h-4 w-4 mr-2 text-primary" />
-                      Project Budget: {project.budget}
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Users className="h-4 w-4 mr-2 text-primary" />
-                      Team: {project.team}
-                    </div>
-                  </div>
 
                   {/* Features */}
                   <div className="mb-4">

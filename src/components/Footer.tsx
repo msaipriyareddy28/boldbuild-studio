@@ -1,6 +1,7 @@
 import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const quickLinks = [
@@ -34,12 +35,14 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
-                  <span className="text-secondary-foreground font-heading font-bold text-xl">J</span>
-                </div>
+              <div className="flex items-center space-x-3 mb-4">
+                <img 
+                  src={logo}
+                  alt="J&U Projects Logo" 
+                  className="h-12 w-auto"
+                />
                 <div>
-                  <h3 className="text-xl font-heading font-bold text-white">JuProjects</h3>
+                  <h3 className="text-xl font-heading font-bold text-white">J&U Projects LLP</h3>
                   <p className="text-xs text-white/70 -mt-1">Construction Studio</p>
                 </div>
               </div>
@@ -74,6 +77,7 @@ const Footer = () => {
                 <li key={index}>
                   <Link 
                     to={link.path}
+                    viewTransition
                     className="text-white/80 hover:text-secondary transition-colors duration-200 flex items-center group"
                   >
                     <span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3 group-hover:scale-125 transition-transform" />
@@ -92,6 +96,7 @@ const Footer = () => {
                 <li key={index}>
                   <Link 
                     to="/services"
+                    viewTransition
                     className="text-white/80 hover:text-secondary transition-colors duration-200 flex items-center group"
                   >
                     <span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3 group-hover:scale-125 transition-transform" />
@@ -110,14 +115,14 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 text-secondary mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-white/90 font-medium">Main Office</p>
-                  <p className="text-white/70 text-sm">123 Construction Ave<br />Downtown City, ST 12345</p>
+                  <p className="text-white/70 text-sm">402,4th floor,Flat No.1559&1760A,Gokul Trade Center, KPHB state, 9th Phase, Venkata Ramana Colony,<br />Hyderabad, Telangana 500085</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-secondary flex-shrink-0" />
                 <div>
-                  <p className="text-white/90 font-medium">(555) 123-4567</p>
+                  <p className="text-white/90 font-medium">9494054102</p>
                   <p className="text-white/70 text-sm">24/7 Emergency Line</p>
                 </div>
               </div>
@@ -152,10 +157,10 @@ const Footer = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="btn-gold" asChild>
-                <Link to="/contact">Get Free Quote</Link>
+                <Link to="/contact" viewTransition>Get Free Quote</Link>
               </Button>
               <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
-                <Link to="/projects">View Our Work</Link>
+                <Link to="/projects" viewTransition>View Our Work</Link>
               </Button>
             </div>
           </div>
@@ -165,12 +170,12 @@ const Footer = () => {
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-white/70 text-sm">
-              © 2024 JuProjects Construction Studio. All rights reserved.
+              © 2024 J&U Projects LLP Construction Studio. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-white/70">
-              <Link to="/privacy" className="hover:text-secondary transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-secondary transition-colors">Terms of Service</Link>
-              <Link to="/careers" className="hover:text-secondary transition-colors">Careers</Link>
+              <Link to="/privacy" viewTransition className="hover:text-secondary transition-colors">Privacy Policy</Link>
+              <Link to="/terms" viewTransition className="hover:text-secondary transition-colors">Terms of Service</Link>
+              <Link to="/careers" viewTransition className="hover:text-secondary transition-colors">Careers</Link>
             </div>
           </div>
         </div>
