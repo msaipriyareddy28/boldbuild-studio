@@ -36,10 +36,10 @@ const Footer = () => {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
-                  <span className="text-secondary-foreground font-heading font-bold text-xl">B</span>
+                  <span className="text-secondary-foreground font-heading font-bold text-xl">J</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-heading font-bold text-white">BoldBuild</h3>
+                  <h3 className="text-xl font-heading font-bold text-white">JuProjects</h3>
                   <p className="text-xs text-white/70 -mt-1">Construction Studio</p>
                 </div>
               </div>
@@ -125,7 +125,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-secondary flex-shrink-0" />
                 <div>
-                  <p className="text-white/90 font-medium">info@boldbuild.com</p>
+                  <p className="text-white/90 font-medium">info@juprojects.com</p>
                   <p className="text-white/70 text-sm">Get your free quote</p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ const Footer = () => {
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-white/70 text-sm">
-              © 2024 BoldBuild Construction Studio. All rights reserved.
+              © 2024 JuProjects Construction Studio. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-white/70">
               <Link to="/privacy" className="hover:text-secondary transition-colors">Privacy Policy</Link>
