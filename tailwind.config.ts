@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				heading: ['Montserrat', 'system-ui', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +65,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Construction theme colors
+				'construction-dark': 'hsl(var(--construction-dark))',
+				'construction-light': 'hsl(var(--construction-light))', 
+				'gold-bright': 'hsl(var(--gold-bright))',
+				'gold-dark': 'hsl(var(--gold-dark))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
