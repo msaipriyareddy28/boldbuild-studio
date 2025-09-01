@@ -24,15 +24,12 @@ const Header = () => {
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img 
+            <img
               src={logo}
-              alt="J&U Projects Logo" 
-              className="h-12 w-auto"
+              alt="J&U Projects Logo"
+              className="h-24 w-auto"
             />
-            <div>
-              <h1 className="text-xl font-heading font-bold text-primary">J&U Projects LLP</h1>
-              <p className="text-xs text-muted-foreground -mt-1">Construction Studio</p>
-            </div>
+            
           </Link>
 
           {/* Desktop Navigation */}
