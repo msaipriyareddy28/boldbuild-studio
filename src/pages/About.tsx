@@ -13,14 +13,14 @@ const About = () => {
 
   const team = [
     {
-      name: "KUNCHE SUNEETHA",
+      name: "K.SUNEETHA",
       role: "DIRECTOR",
       image: "https://placehold.co/150x150/1a1a1a/EAB308?text=KS",
       experience: "20+ Years",
       specialty: "Project Management & Business Development"
     },
     {
-      name: "UNDRU RAJU",
+      name: "U.RAJU",
       role: "DIRECTOR",
       image: "https://placehold.co/150x150/1a1a1a/EAB308?text=UR",
       experience: "15+ Years", 
