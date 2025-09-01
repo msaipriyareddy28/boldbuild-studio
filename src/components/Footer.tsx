@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const quickLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
@@ -75,9 +79,10 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <Link 
+                  <Link
                     to={link.path}
                     viewTransition
+                    onClick={scrollToTop}
                     className="text-white/80 hover:text-secondary transition-colors duration-200 flex items-center group"
                   >
                     <span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3 group-hover:scale-125 transition-transform" />
@@ -94,9 +99,10 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <Link 
+                  <Link
                     to="/services"
                     viewTransition
+                    onClick={scrollToTop}
                     className="text-white/80 hover:text-secondary transition-colors duration-200 flex items-center group"
                   >
                     <span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3 group-hover:scale-125 transition-transform" />
@@ -157,10 +163,10 @@ const Footer = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="btn-gold" asChild>
-                <Link to="/contact" viewTransition>Get Free Quote</Link>
+                <Link to="/contact" viewTransition onClick={scrollToTop}>Get Free Quote</Link>
               </Button>
               <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
-                <Link to="/projects" viewTransition>View Our Work</Link>
+                <Link to="/projects" viewTransition onClick={scrollToTop}>View Our Work</Link>
               </Button>
             </div>
           </div>
@@ -173,9 +179,9 @@ const Footer = () => {
               © 2024 J&U Projects LLP Construction Studio. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-white/70">
-              <Link to="/privacy" viewTransition className="hover:text-secondary transition-colors">Privacy Policy</Link>
-              <Link to="/terms" viewTransition className="hover:text-secondary transition-colors">Terms of Service</Link>
-              <Link to="/careers" viewTransition className="hover:text-secondary transition-colors">Careers</Link>
+              <Link to="/privacy" viewTransition onClick={scrollToTop} className="hover:text-secondary transition-colors">Privacy Policy</Link>
+              <Link to="/terms" viewTransition onClick={scrollToTop} className="hover:text-secondary transition-colors">Terms of Service</Link>
+              <Link to="/careers" viewTransition onClick={scrollToTop} className="hover:text-secondary transition-colors">Careers</Link>
             </div>
           </div>
         </div>
