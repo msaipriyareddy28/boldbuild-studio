@@ -25,23 +25,47 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      projectType: "",
-      budget: "",
-      message: ""
-    });
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          projectType: "",
+          budget: "",
+          message: ""
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "There was an error sending your message. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was an error sending your message. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const contactInfo = [
@@ -97,7 +121,7 @@ const Contact = () => {
       <section className="gradient-primary text-white py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 animate-fade-up">
+            <h1 className="text-5xl md:text-6xl text-white font-heading font-bold mb-6 animate-fade-up">
               Contact Us
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-up animation-delay-200">
@@ -111,7 +135,7 @@ const Contact = () => {
                 <Phone className="mr-2 h-5 w-5" />
                 9494054102
               </Button>
-              <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-3">
+              <Button variant="outline" className="border-white/30 text-black hover:bg-white/10 text-lg px-8 py-3">
                 <MessageCircle className="mr-2 h-5 w-5" />
                 WhatsApp Chat
               </Button>

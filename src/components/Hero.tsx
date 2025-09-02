@@ -68,13 +68,16 @@ const Hero = () => {
                   Get Free Quote <ArrowRight className="h-5 w-5 ml-2" />
                 </Link>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="text-lg px-8 py-4 h-auto bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm"
+                asChild
               >
-                <Play className="h-5 w-5 mr-2" />
-                Watch Our Story
+                <a href="https://www.youtube.com/@JUProjectsLLP" target="_blank" rel="noopener noreferrer">
+                  <Play className="h-5 w-5 mr-2" />
+                  Watch Our Story
+                </a>
               </Button>
             </motion.div>
           </motion.div>

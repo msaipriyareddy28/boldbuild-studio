@@ -27,7 +27,7 @@ const Header = () => {
             <img
               src={logo}
               alt="J&U Projects Logo"
-              className="h-24 w-auto"
+              className="h-[70px] w-auto"
             />
             
           </Link>

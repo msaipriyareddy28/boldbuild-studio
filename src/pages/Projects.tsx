@@ -99,7 +99,7 @@ const Projects = () => {
       <section className="gradient-primary text-white py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 animate-fade-up">
+            <h1 className="text-5xl md:text-6xl text-white font-heading font-bold mb-6 animate-fade-up">
               Our Projects
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-up animation-delay-200">
@@ -204,7 +204,7 @@ const Projects = () => {
       <section className="gradient-primary text-white py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl font-heading font-bold mb-6">
+            <h2 className="text-4xl text-white font-heading font-bold mb-6">
               Ready to Create Your Dream Project?
             </h2>
             <p className="text-xl text-white/90 mb-8">
@@ -215,7 +215,7 @@ const Projects = () => {
               <Button className="btn-gold text-lg px-8 py-3" asChild>
                 <Link to="/contact">Start Your Project</Link>
               </Button>
-              <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-3" asChild>
+              <Button variant="outline" className="bg-white/20 border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-3 font-semibold" asChild>
                 <Link to="/services">View Our Services</Link>
               </Button>
             </div>

@@ -1,7 +1,7 @@
-import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/footer.png";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -27,8 +27,8 @@ const Footer = () => {
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Instagram, href: "https://www.instagram.com/juprojectsllp/", label: "Instagram" },
+    { icon: Youtube, href: "https://www.youtube.com/@JUProjectsLLP", label: "YouTube" },
   ];
 
   return (
@@ -45,10 +45,6 @@ const Footer = () => {
                   alt="J&U Projects Logo" 
                   className="h-12 w-auto"
                 />
-                <div>
-                  <h3 className="text-xl font-heading font-bold text-white">J&U Projects LLP</h3>
-                  <p className="text-xs text-white/70 -mt-1">Construction Studio</p>
-                </div>
               </div>
               <p className="text-white/80 leading-relaxed">
                 Building excellence since 2008. We transform visions into reality with 
@@ -64,6 +60,8 @@ const Footer = () => {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors duration-300 group"
                   >
                     <IconComponent className="h-5 w-5 text-white group-hover:text-secondary-foreground" />
@@ -165,7 +163,7 @@ const Footer = () => {
               <Button className="btn-gold" asChild>
                 <Link to="/contact" viewTransition onClick={scrollToTop}>Get Free Quote</Link>
               </Button>
-              <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
+              <Button variant="outline" className="border-white/30 text-black hover:bg-white/10" asChild>
                 <Link to="/projects" viewTransition onClick={scrollToTop}>View Our Work</Link>
               </Button>
             </div>
@@ -181,7 +179,7 @@ const Footer = () => {
             <div className="flex space-x-6 text-sm text-white/70">
               <Link to="/privacy" viewTransition onClick={scrollToTop} className="hover:text-secondary transition-colors">Privacy Policy</Link>
               <Link to="/terms" viewTransition onClick={scrollToTop} className="hover:text-secondary transition-colors">Terms of Service</Link>
-              <Link to="/careers" viewTransition onClick={scrollToTop} className="hover:text-secondary transition-colors">Careers</Link>
+              <a href="https://asiandigitalworld.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">Designed and Developed by Asian Digital World</a>
             </div>
           </div>
         </div>

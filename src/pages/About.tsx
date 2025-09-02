@@ -50,8 +50,8 @@ const About = () => {
       <section className="gradient-primary text-white py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 animate-fade-up">
-              About JuProjects
+            <h1 className="text-5xl md:text-6xl text-white font-heading  mb-6 animate-fade-up">
+              About J&U Projects LLP
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-up animation-delay-200">
               Building excellence since 2008. Transforming visions into reality with 
